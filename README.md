@@ -32,8 +32,8 @@ from foursquare_api_tools import foursquare_api_tools as ft
 `
 
 ### Initialize the client
-`CLIENT_ID = 'YOUR_CLIENT_ID' # your Foursquare ID
-CLIENT_SECRET = 'YOUR_SECRET' # your Foursquare Secret
+`CLIENT_ID = 'YOUR_CLIENT_ID' # your Foursquare ID  
+CLIENT_SECRET = 'YOUR_SECRET' # your Foursquare Secret  
 VERSION = '20180605' # Foursquare API version`
 
 this example is **Userless Auth**
