@@ -9,7 +9,7 @@ def venues_explore(client,lat,lng, limit):
 	#get venues using client https://github.com/mLewisLogic/foursquare
 	venues = client.venues.explore(params={'ll':ll,'limit':limit})
 	venues=venues['groups'][0]['items']
-	df_venues = pd.DataFrame.from_dict(venues)
+	df_venues = pandas.DataFrame.from_dict(venues)
 	df_venues['venue'][0]
 	
 	for i, value in df_venues['venue'].items():
