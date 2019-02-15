@@ -31,5 +31,3 @@ def venues_explore(client,lat,lng, limit):
 						   'Address':venueAddress
 						  }])
 	return df_a.reset_index()
-
-venues_explore()
