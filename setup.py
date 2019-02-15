@@ -7,7 +7,7 @@ setup(
 	author='Diego Carrasco',
 	author_email='diego@diegocarrasco.com',
 	# Needed to actually package something
-	packages=['foursquare_api_tools'],
+	packages=['foursquare_api_tools','pandas','foursquare'],
 	# Needed for dependencies
 	install_requires=['pandas','foursquare'],
 	# *strongly* suggested for sharing
