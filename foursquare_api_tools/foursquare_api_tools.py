@@ -20,10 +20,9 @@ def venues_explore(client,lat,lng, limit):
 		venueLat=value['location']['lat']
 		venueLng=value['location']['lng']
 		venueCountry=value['location']['country']
-		try:
+		if venuePostalCode=value['location']['postalCode']:
 			venuePostalCode=value['location']['postalCode']
-		except:
-			venuePostalCode=''
+		else: venuePostalCode=''
 		venueAddress=value['location']['address']
 		venueCategory=value['categories'][0]['name']
 		df_a=df_a.append([{'Name':venueName, 
