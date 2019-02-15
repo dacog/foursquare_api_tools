@@ -2,3 +2,4 @@
 # -*- coding: UTF-8 -*-
 import pandas as pd
 import foursquare as fs
+print('libraries imported')
