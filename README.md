@@ -28,8 +28,7 @@ If you are using Jupyter Notebooks use:
 ### Import libraries
 
 `
-import foursquare as fs #The Foursquare API client for Python https://pypi.python.org/pypi/foursquare/
-import pandas as pd
+from foursquare_api_tools import foursquare_api_tools as ft
 `
 
 ### Initialize the client
