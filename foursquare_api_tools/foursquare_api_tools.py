@@ -21,7 +21,10 @@ def venues_explore(client,lat,lng, limit,verbose=0):
 		if verbose==1:
 			print('i', i, 'name', value['name'], value['location']['city'])
 		venueName=value['name']
-		venueCity=value['location']['city']
+		try:
+			venueCity=value['location']['city']
+		except:
+			venueCity='no-city'
 		venueCountry=value['location']['country']
 		venueLat=value['location']['lat']
 		venueLng=value['location']['lng']
