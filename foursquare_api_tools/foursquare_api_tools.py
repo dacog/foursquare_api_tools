@@ -1,9 +1,8 @@
 import pandas as pd
 
-def venues_explore(client,lat,lng, limit,verbose):
+def venues_explore(client,lat,lng, limit,verbose=0):
 	'''funtion to get n-places using explore in foursquare, where n is the limit when calling the function.
 	This returns a pandas dataframe with name, city ,country, lat, long, address and main category as columns'''
-	verbose=0
 	# create a dataframe
 	df_a = pd.DataFrame(columns=['Name', 
 	'City', 
