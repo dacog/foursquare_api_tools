@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
 	# Needed to silence warnings (and to be a worthwhile package)
-	name='Foursquare API tools',
+	name='foursquare_api_tools',
 	url='https://github.com/dacog/foursquare_api_tools',
 	author='Diego Carrasco',
 	author_email='diego@diegocarrasco.com',
