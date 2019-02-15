@@ -22,7 +22,8 @@ def venues_explore(client,lat,lng, limit,verbose=0):
 			print('i', i, 'name', value['name'], value['location']['city'])
 		venueName=value['name']
 		try:
-			venueCity=value['location']['city']
+			if value['location'].has_key('city'):
+				venueCity=value['location']['city']
 		except:
 			venueCity='no-city'
 		venueCountry=value['location']['country']
