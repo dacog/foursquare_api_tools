@@ -9,7 +9,6 @@ def venues_explore(client,lat,lng, limit):
 	'Latitude',
 	'Longitude',
 	'Category',
-#	'Postal Code',
 	 'Address'])
 	ll=lat+','+lng
 	#get venues using client https://github.com/mLewisLogic/foursquare
@@ -26,9 +25,6 @@ def venues_explore(client,lat,lng, limit):
 		venueLat=value['location']['lat']
 		venueLng=value['location']['lng']
 		venueCountry=value['location']['country']
-#		if venuePostalCode=value['location']['postalCode']:
-#			venuePostalCode=value['location']['postalCode']
-#		else: venuePostalCode=''
 		venueAddress=value['location']['address']
 		venueCategory=value['categories'][0]['name']
 		df_a=df_a.append([{'Name':venueName, 
@@ -37,7 +33,6 @@ def venues_explore(client,lat,lng, limit):
 						   'Latitude':venueLat,
 						   'Longitude':venueLng,
 						   'Category':venueCategory,
-						   #'Postal Code':venuePostalCode,
 						   'Address':venueAddress
 						  }])
 	return df_a.reset_index()
