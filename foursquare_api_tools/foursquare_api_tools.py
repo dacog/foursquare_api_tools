@@ -2,9 +2,15 @@ import pandas as pd
 
 def venues_explore(client,lat,lng, limit):
 	'''funtion to get n-places using explore in foursquare, where n is the limit when calling the function.
-	This returns a pandas dataframe with name, city ,country, lat, long, postal code, address and main category as columns'''
+	This returns a pandas dataframe with name, city ,country, lat, long, address and main category as columns'''
 	# creata a dataframe
-	df_a = pd.DataFrame(columns=['Name', 'City', 'Latitude','Longitude','Category','Postal Code', 'Address'])
+	df_a = pd.DataFrame(columns=['Name', 
+	'City', 
+	'Latitude',
+	'Longitude',
+	'Category',
+#	'Postal Code',
+	 'Address'])
 	ll=lat+','+lng
 	#get venues using client https://github.com/mLewisLogic/foursquare
 	venues = client.venues.explore(params={'ll':ll,'limit':limit, 'intent' : 'browse'})
@@ -20,9 +26,9 @@ def venues_explore(client,lat,lng, limit):
 		venueLat=value['location']['lat']
 		venueLng=value['location']['lng']
 		venueCountry=value['location']['country']
-		if venuePostalCode=value['location']['postalCode']:
-			venuePostalCode=value['location']['postalCode']
-		else: venuePostalCode=''
+#		if venuePostalCode=value['location']['postalCode']:
+#			venuePostalCode=value['location']['postalCode']
+#		else: venuePostalCode=''
 		venueAddress=value['location']['address']
 		venueCategory=value['categories'][0]['name']
 		df_a=df_a.append([{'Name':venueName, 
@@ -31,7 +37,7 @@ def venues_explore(client,lat,lng, limit):
 						   'Latitude':venueLat,
 						   'Longitude':venueLng,
 						   'Category':venueCategory,
-						   'Postal Code':venuePostalCode,
+						   #'Postal Code':venuePostalCode,
 						   'Address':venueAddress
 						  }])
 	return df_a.reset_index()
