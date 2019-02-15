@@ -19,18 +19,20 @@ def venues_explore(client,lat,lng, limit,verbose=0):
 	
 	for i, value in df_venues['venue'].items():
 		if verbose==1:
-			print('i', i, 'name', value['name'], value['location']['city'])
+			print('i', i, 'name', value['name'])
 		venueName=value['name']
 		try:
-			if value['location'].has_key('city'):
-				venueCity=value['location']['city']
+			venueCity=value['location']['city']
 		except:
-			venueCity='no-city'
+			venueCity=''
 		venueCountry=value['location']['country']
 		venueLat=value['location']['lat']
 		venueLng=value['location']['lng']
 		venueCountry=value['location']['country']
-		venueAddress=value['location']['address']
+		try:
+			venueAddress=value['location']['address']
+		except:
+			venueAddress=''
 		venueCategory=value['categories'][0]['name']
 		df_a=df_a.append([{'Name':venueName, 
 						   'City':venueCity,
