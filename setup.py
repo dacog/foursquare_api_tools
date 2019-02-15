@@ -14,7 +14,7 @@ setup(
 	version='0.1',
 	# The license can be anything you like
 	license='MIT',
-	description='some functions to interact with foursquare using 'foursquare' package',
+	description='some functions to interact with foursquare using \'foursquare\' package',
 	# We will also need a readme eventually (there will be a warning)
 	# long_description=open('README.md').read(),
 )
