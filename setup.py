@@ -1,5 +1,4 @@
 from setuptools import setup
-import pandas as pd
 
 setup(
 	# Needed to silence warnings (and to be a worthwhile package)
