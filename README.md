@@ -47,6 +47,7 @@ client = fs.Foursquare(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, version
 ```
 
 ### Use the function
+```python
 venues_explore(client,lat='40.7233',lng='-74.0030',limit=100)
 ```
 
