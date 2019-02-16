@@ -56,9 +56,13 @@ venues_explore(client,lat='40.7233',lng='-74.0030',limit=100)
 Here is an example on dataplatform.cloud.ibm.com
 [https://gist.github.com/e26e21df3b93860e75fc374be89a1a53]()
 
+![example.png]()
+
 ## More details about usage
 ```python
 def venues_explore(client,lat,lng, limit=100, verbose=0, sort='popular', radius=2000, offset=1, day='any'):
 	'''funtion to get n-places using explore in foursquare, where n is the limit when calling the function.
 	This returns a pandas dataframe with name, city ,country, lat, long, address and main category as columns
 	Arguments: *client, *lat, *long, limit (defaults to 100), radius (defaults to 2000), verbose (defaults to 0), offset (defaults to 1), day (defaults to any)'''
+
+```
