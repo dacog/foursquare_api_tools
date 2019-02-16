@@ -30,6 +30,7 @@ If you are using Jupyter Notebooks use:
 ### Import libraries
 
 ```python
+import foursquare as fs
 from foursquare_api_tools import foursquare_api_tools as ft
 ````
 
