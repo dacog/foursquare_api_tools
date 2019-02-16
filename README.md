@@ -56,7 +56,7 @@ venues_explore(client,lat='40.7233',lng='-74.0030',limit=100)
 Here is an example on dataplatform.cloud.ibm.com
 [https://gist.github.com/e26e21df3b93860e75fc374be89a1a53]()
 
-![example.png]()
+![https://github.com/dacog/foursquare_api_tools/blob/master/example.png?raw=true]()
 
 ## More details about usage
 ```python
