@@ -7,7 +7,7 @@ I needed to get the venues around a coordinate for a project, but wanted to get 
 
 I found [https://pypi.python.org/pypi/foursquare/]() which works really good, but still had to clean the result, thus this.
 
-I've only tried this with [https://developer.foursquare.com/docs/api/configuration/authentication](Userless Auth from Foursquare). AS I'm using _foursquare_ package it should work with user authentication.
+I've only tried this with [https://developer.foursquare.com/docs/api/configuration/authentication](Userless Auth from Foursquare). As I'm using _foursquare_ package it should work with user authentication.
 
 
 ## Installation
