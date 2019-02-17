@@ -97,7 +97,7 @@ def get_categories():
     df_cat.drop(['categories','countryCodes', 'icon.mapPrefix', 'icon.prefix', 'icon.suffix'], axis=1, inplace=True)
 
     print('There are %i Main Categories, %i sub-categories and %i sub-sub categories'% (df_cat['Main Category Name'].unique().size, df_cat['Sub-Main Category Name'].unique().size, df_cat['name'].unique().size))
-return df_cat
+    return df_cat
     
     
     
