@@ -26,6 +26,25 @@ If you are using Jupyter Notebooks use:
 ```
 ## Details
 
+```python
+help(ft)
+
+Help on module foursquare_api_tools.foursquare_api_tools in foursquare_api_tools:
+
+NAME
+    foursquare_api_tools.foursquare_api_tools
+
+FUNCTIONS
+    get_categories()
+        Function to get a Pandas DataFrame of all categories in Foursquare as listed in https://developer.foursquare.com/docs/resources/categories
+        It uses json_normalize to get nested information and return a DataFrame with main, sub and sub-sub categories name and ID
+    
+    venues_explore(client, lat, lng, limit=100, verbose=0, sort='popular', radius=2000, offset=1, day='any')
+        funtion to get n-places using explore in foursquare, where n is the limit when calling the function.
+        This returns a pandas dataframe with name, city ,country, lat, long, address and main category as columns
+        Arguments: *client, *lat, *long, limit (defaults to 100), radius (defaults to 2000), verbose (defaults to 0), offset (defaults to 1), day (defaults to any)
+```
+
 ## Example of use
 
 ### Import libraries
