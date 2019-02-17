@@ -1,6 +1,4 @@
-#importing pandas
 import pandas as pd
-# tranforming json file into a pandas dataframe library
 from pandas.io.json import json_normalize
 
 def venues_explore(client,lat,lng, limit=100, verbose=0, sort='popular', radius=2000, offset=1, day='any'):
