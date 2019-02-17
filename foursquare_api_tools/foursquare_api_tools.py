@@ -1,7 +1,7 @@
 import pandas as pd
 from pandas.io.json import json_normalize
 
-def venues_explore(client,lat,lng, limit=100, verbose=0, sort='popular', radius=2000, offset=1, day='any'):
+def venues_explore(client,lat,lng, limit=100, verbose=0, sort='popular', radius=2000, offset=1, day='any',query=''):
     '''funtion to get n-places using explore in foursquare, where n is the limit when calling the function.
     This returns a pandas dataframe with name, city ,country, lat, long, address and main category as columns
     Arguments: *client, *lat, *long, limit (defaults to 100), radius (defaults to 2000), verbose (defaults to 0), offset (defaults to 1), day (defaults to any)'''
@@ -22,7 +22,8 @@ def venues_explore(client,lat,lng, limit=100, verbose=0, sort='popular', radius=
             'sort':sort, 
             'radius':radius, 
             'offset':i_offset,
-            'day':day
+            'day':day,
+            'query':query
             })
             venues=venues['groups'][0]['items']
             df_venues = pd.DataFrame.from_dict(venues)
