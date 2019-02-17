@@ -24,6 +24,7 @@ If you are using Jupyter Notebooks use:
 
 !pip install git+https://github.com/dacog/foursquare_api_tools.git#egg=foursquare_api_tools
 ```
+## Details
 
 ## Example of use
 
