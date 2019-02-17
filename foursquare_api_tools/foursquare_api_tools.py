@@ -1,4 +1,7 @@
+#importing pandas
 import pandas as pd
+# tranforming json file into a pandas dataframe library
+from pandas.io.json import json_normalize
 
 def venues_explore(client,lat,lng, limit=100, verbose=0, sort='popular', radius=2000, offset=1, day='any'):
     '''funtion to get n-places using explore in foursquare, where n is the limit when calling the function.
@@ -55,3 +58,49 @@ def venues_explore(client,lat,lng, limit=100, verbose=0, sort='popular', radius=
     else:
         print('ERROR: offset value per Foursquare API is up to 50. Please use a lower value.')
     return df_a.reset_index()
+
+def get_categories()
+    df1 = pd.read_json('https://api.foursquare.com/v2/venues/categories?v=20170211&oauth_token=QEJ4AQPTMMNB413HGNZ5YDMJSHTOHZHMLZCAQCCLXIX41OMP&includeSupportedCC=true')
+    df1=df1.iloc[0,1]
+    df1 = json_normalize(df1)
+
+    #json_normalize(df1.iloc[0,0])
+    i=0
+    df_size=df1.shape[0]
+    df_cat=pd.DataFrame()
+
+
+    for i in range(i,df_size):
+        #print('print',df1.iloc[i,0])
+        
+        #normalize subcategories
+        new_cats=json_normalize(df1.iloc[i,0])
+        #get new df size
+        new_size=new_cats.shape[0]
+        #print('new_size',new_size)
+        #new vars
+        i_sub=0
+        new_sub_cat=pd.DataFrame() #new df for sub sub cats
+        #iterate to get sub sub categories
+        for i_sub in range(i_sub,new_size):
+            sub_cats=json_normalize(new_cats.iloc[i_sub,0]) #normalize sub sub categories
+            sub_cats['Sub-Main Category Name']=new_cats.iloc[i_sub, new_cats.columns.get_loc('name')] #for sub sub categories assign parent name
+            sub_cats['Sub-Main Category ID']=new_cats.iloc[i_sub, new_cats.columns.get_loc('id')] #for sub sub categories assign parent ID
+            #print('sub sub head', sub_cats.head())
+            new_sub_cat=new_sub_cat.append(sub_cats)
+            #print('new sub cats shape', new_sub_cat.shape)
+        #print(type(new_cats))
+        new_sub_cat['Main Category Name']=df1.iloc[i, df1.columns.get_loc('name')]
+        new_sub_cat['Main Category ID']=df1.iloc[i, df1.columns.get_loc('id')]
+        df_cat=df_cat.append(new_sub_cat)
+
+    df_cat.drop(['categories','countryCodes', 'icon.mapPrefix', 'icon.prefix', 'icon.suffix'], axis=1, inplace=True)
+
+    print('There are %i Main Categories, %i sub-categories and %i sub-sub categories'% (df_cat['Main Category Name'].unique().size, df_cat['Sub-Main Category Name'].unique().size, df_cat['name'].unique().size))
+return df_cat
+    
+    
+    
+    
+    
+    
