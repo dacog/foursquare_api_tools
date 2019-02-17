@@ -59,7 +59,7 @@ def venues_explore(client,lat,lng, limit=100, verbose=0, sort='popular', radius=
         print('ERROR: offset value per Foursquare API is up to 50. Please use a lower value.')
     return df_a.reset_index()
 
-def get_categories()
+def get_categories():
     df1 = pd.read_json('https://api.foursquare.com/v2/venues/categories?v=20170211&oauth_token=QEJ4AQPTMMNB413HGNZ5YDMJSHTOHZHMLZCAQCCLXIX41OMP&includeSupportedCC=true')
     df1=df1.iloc[0,1]
     df1 = json_normalize(df1)
